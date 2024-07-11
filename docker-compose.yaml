@@ -5,6 +5,7 @@ services:
   api:
   #Vai puxar no nosso dockerfile, já que estamos na mesma hierarquia de arquivos usamos o ponto
     build: .
+    container_name: api
     ports:
       - 8080:8080
     environment:

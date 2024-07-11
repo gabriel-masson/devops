@@ -1,1 +1,21 @@
 
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-push:
+    name: 'Build and Push'
+    run-on: ubunto-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Build docker image
+    #A tag deve estar sempre associada alguma versão, nunca latest por isso use a hash do commit
+      run: docker build -t journy:latest .
+  
+  
