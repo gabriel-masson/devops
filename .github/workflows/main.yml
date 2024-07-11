@@ -16,6 +16,6 @@ jobs:
     
     - name: Build docker image
     #A tag deve estar sempre associada alguma versão, nunca latest por isso use a hash do commit
-      run: docker build -t journy:latest .
+      run: docker build -t journey:latest .
   
   
