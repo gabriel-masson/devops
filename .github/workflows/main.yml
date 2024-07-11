@@ -21,7 +21,7 @@ jobs:
       #GITHUB_OUTPUT é a variavel que leva todas as saidas para o proximo step
       #para executar mais de uma linha usamos |
       run: | 
-        SHA=${echo $GITHUB_SHA | head -c7} 
+        SHA=$(echo $GITHUB_SHA | head -c7)
         echo "sha=$SHA" >> $GITHUB_OUTPUT
     
     - name: Build docker image
