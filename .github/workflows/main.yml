@@ -14,8 +14,17 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
     
+    #Vamos pegar a sha do github
+    - name: Generate SHA
+      id: generate_sha
+      #Pegue sha e depois retorne as 7 primeiros caracteres
+      #GITHUB_OUTPUT é a variavel que leva todas as saidas para o proximo step
+      run: | #para executar mais de uma linha usamos |
+        SHA=${echo $GITHUB_SHA | head -c7} 
+        echo 'sha=$SHA' >> $GITHUB_OUTPUT
+    
     - name: Build docker image
     #A tag deve estar sempre associada alguma versão, nunca latest por isso use a hash do commit
-      run: docker build -t journey:latest .
+      run: docker build -t journey:${{ steps.generate_sha.outputs.sha}} .
   
   
