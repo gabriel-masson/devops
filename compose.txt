@@ -1,4 +1,4 @@
-#comando par executar: docker-compose up --build -d
+#comando par executar: docker-compose up --build -d    =-=-=-=-=-=
 services:
   mailpit:
     image: axllent/mailpit:latest
