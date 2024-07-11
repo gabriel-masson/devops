@@ -19,9 +19,10 @@ jobs:
       id: generate_sha
       #Pegue sha e depois retorne as 7 primeiros caracteres
       #GITHUB_OUTPUT é a variavel que leva todas as saidas para o proximo step
-      run: | #para executar mais de uma linha usamos |
+      #para executar mais de uma linha usamos |
+      run: | 
         SHA=${echo $GITHUB_SHA | head -c7} 
-        echo 'sha=$SHA' >> $GITHUB_OUTPUT
+        echo "sha=$SHA" >> $GITHUB_OUTPUT
     
     - name: Build docker image
     #A tag deve estar sempre associada alguma versão, nunca latest por isso use a hash do commit
