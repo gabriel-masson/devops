@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-push:
     name: 'Build and Push'
-    run-on: ubunto-latest
+    runs-on: ubunto-latest
 
     steps:
     - name: Checkout
